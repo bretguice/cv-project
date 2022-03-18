@@ -1,54 +1,33 @@
+import { Component } from 'react';
 import './App.css';
+import Education from './components/Education';
+import Personal from './components/Personal'
+import WorkExperience from './components/WorkExperience';
 
-function App() {
+class App extends Component {
+  constructor(){
+    super()
 
+    this.state = {
+      personal: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+      },
+    };
+  }
+
+  render(){
     return (
       <div className="App">
-        
+        <Personal />
+        <WorkExperience />
+        <Education />
       </div>
     );
-  
+  }
 }
 
 export default App;
 
-/* 
-Create Resume Builder App
-Components:
-  - Personal Info
-  - Education
-  - Work Experience
-
-Personal Info
-All created by input fields
-  - First Name
-  - Last Name
-  - Phone
-  - email
-
-Education 
-create objects with props
-need submit button to create object
-  - school
-  - city
-  - year graduated
-  - degree
-
-Work Epxerience
-create objects with props
-need submit buttont o create object
-  - employer
-  - start date
-  - end date
-  - job title
-  - description
-
-
-Input screen and preview screen
-how can I save as a PDF?
-data storage
-
-
-
-
-*/
