@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function WorkExperienceView() {
-  return (
-    <div>WorkExperienceView</div>
-  )
+class WorkExperienceView extends Component {
+  
+  render(){
+    return (
+      <div>
+      <div>WorkExperienceView</div>
+      </div>
+    )
+  }
 }
+
+export default WorkExperienceView

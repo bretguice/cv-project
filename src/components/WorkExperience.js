@@ -1,50 +1,52 @@
 import React, { Component } from 'react'
-import uniqid from 'uniqid'
 
 class WorkExperience extends Component {
-
-  handleChange = (e) => {
-    this.setState({
-        workExperience: {
-          [e.target.name]: e.target.value,
-      }
-
-    })
-  }
-
-  handleSubmitJob = (e) => {
-    e.preventDefault();
-    const jobs = [...this.state.jobs]
-    console.log(jobs)
-    this.setState({
-      jobs: jobs(this.state.workExperience),
-      workExperience: {
-        company: '',
-        jobTitle: '',
-        startDate: '',
-        endDate: '',
-        jobDescription: '',
-        id: uniqid()
-      },
-    });
-  }
 
   render(){
     return (
       <>
       <h2>WorkExperience</h2>
-      <form onSubmit={this.handleSubmitJob}>
-        <input name="company" placeholder="Company"/>
-        <input name="jobTitle" placeholder='Job Title'/>
+      <form onSubmit={this.props.onSubmit}>
+        <input 
+          name="company" 
+          placeholder="Company"
+          type="text"
+          onChange={this.props.onChange}
+          value={this.props.job}
+          />
+        <input 
+          name="jobTitle" 
+          placeholder='Job Title'
+          onChange={this.props.onChange}  
+        />
+        <input 
+          name="city"
+          placeholder='City'
+          onChange={this.props.onChange}
+        />
         <div>
           <label>Start Date: </label>
-          <input name="startDate" type='date' placeholder='Start Date' />
+          <input 
+            name="startDate" 
+            type='date' 
+            placeholder='Start Date' 
+            onChange={this.props.onChange}  
+          />
         </div>
         <div>
           <label>End Date: </label>
-          <input name="endDate" type='date' placeholder='Start Date' />
+          <input 
+            name="endDate" 
+            type='date' 
+            placeholder='Start Date' 
+            onChange={this.props.onChange}  
+          />
         </div>
-        <textarea name="jobDescription" placeholder='Job Description'/>
+        <textarea 
+          name="jobDescription" 
+          placeholder='Job Description'
+          onChange={this.props.onChange}  
+        />
         <button> Submit </button>
       </form>
       </>

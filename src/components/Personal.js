@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 class Personal extends Component {
 
 
@@ -13,14 +12,12 @@ class Personal extends Component {
                             name="firstName" 
                             onChange={this.props.onChange} 
                             placeholder="First Name" 
-                            firstName={this.props.firstname}
                     /> 
                     <input type="text" 
                             name="lastName" 
                             onChange={this.props.onChange} 
                             placeholder="Last Name" 
-                            lastName={this.props.lastName}
-                        />
+                    />
                     <input type="email" 
                             name="email" 
                             onChange={this.props.onChange} 
