@@ -1,51 +1,95 @@
 import React, {Component} from 'react'
+import styled from 'styled-components'
 
 class Education extends Component {
   
   render(){
     return (
-      <>
-      <h2>Education</h2>
+      <EducationDiv>
+      <h3>Education</h3>
       <form onSubmit={this.props.onSubmit}>
-        <input 
+        <StyledInput 
           name="school" 
           placeholder="School"
           onChange={this.props.onChange}
         />
-        <input 
+        <StyledInput 
           name="city"
-          placeholder='city'
+          placeholder='City'
           onChange={this.props.onChange}
         />
-        <input 
+        <StyledInput 
           name="degree" 
           placeholder='Degree'
           onChange={this.props.onChange}
         />
-        <div>
-          <label>Start Date: </label>
-          <input 
+        <DateDiv>
+          <DateInput 
             name="startDate" 
-            type='date' 
-            placeholder='Start Date' 
+            
+            placeholder='Start Date (e.g. April 2022)' 
             onChange={this.props.onChange}
           />
-        </div>
-        <div>
-          <label>End Date: </label>
-          <input 
+        </DateDiv>
+        <DateDiv>
+          <DateInput 
             name="endDate" 
-            type='date' 
-            placeholder='Start Date' 
+            placeholder='Start Date (e.g. April 2022)' 
             onChange={this.props.onChange}
           />
-        </div>
-        <button> Submit </button>
+        </DateDiv>
+        <ButtonDiv>
+        <AddButton type='submit'> Add </AddButton>
+        <DeleteButton > Delete </DeleteButton>
+        </ButtonDiv>
         </form>
 
-      </>
+      </EducationDiv>
     )
   }
 }
 
 export default Education
+
+const EducationDiv = styled.div`
+display: flex;
+flex-direction: column;
+float: left;
+width: 100%;
+
+`
+
+const StyledInput = styled.input`
+float: left;
+width: 75%;
+border-radius: 5px;
+margin-bottom: 2px;
+`
+const DateDiv = styled.div`
+width: 100%;
+float: left;
+`
+
+
+const DateInput = styled.input`
+float:left;
+width: 50%;
+border-radius: 5px;
+`
+
+const AddButton = styled.button`
+height: 2rem;
+width: 4rem;
+margin-right: 5px;
+
+`
+const DeleteButton = styled.button`
+background-color: red;
+color: white;
+height: 2rem;
+width: 4rem;
+`
+const ButtonDiv = styled.div`
+align-self: flex-end;
+
+`

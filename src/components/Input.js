@@ -18,6 +18,15 @@ class Input extends Component {
           phone={this.props.phone}
           website={this.props.website}
         />
+        <Education 
+          onChange={this.props.onChangeEducation}
+          onSubmit={this.props.onSubmitEducation}
+          school={this.props.school}
+          schoolCity={this.props.schoolCity}
+          degree={this.props.degree}
+          schoolStart={this.props.schoolStart}
+          schoolEnd={this.props.schoolEnd}
+        />
         <WorkExperience 
           onChange={this.props.onChangeExperience}
           onSubmit={this.props.onSubmitExperience}
@@ -28,15 +37,7 @@ class Input extends Component {
           jobStart={this.props.jobStart}
           jobEnd={this.props.jobEnd}
         />
-        <Education 
-          onChange={this.props.onChangeEducation}
-          onSubmit={this.props.onSubmitEducation}
-          school={this.props.school}
-          schoolCity={this.props.schoolCity}
-          degree={this.props.degree}
-          schoolStart={this.props.schoolStart}
-          schoolEnd={this.props.schoolEnd}
-        />
+
         <Skills 
           onChange={this.props.onChangeSkill}
           onSubmit={this.props.onSubmitSkill}

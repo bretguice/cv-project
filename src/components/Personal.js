@@ -1,34 +1,35 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 
 class Personal extends Component {
 
 
     render(){
         return (
-            <div>
-                <h2 >Personal Information</h2>
+            <PersonalDiv>
+                <h3 >Personal Information</h3>
                 <form >
-                    <input type="text" 
+                    <StyledInput  
                             name="firstName" 
                             onChange={this.props.onChange} 
                             placeholder="First Name" 
                     /> 
-                    <input type="text" 
+                    <StyledInput 
                             name="lastName" 
                             onChange={this.props.onChange} 
                             placeholder="Last Name" 
                     />
-                    <input type="email" 
+                    <StyledInput  
                             name="email" 
                             onChange={this.props.onChange} 
                             placeholder="E-mail" 
                     />
-                    <input type="tel" 
+                    <StyledInput  
                             name="phone" 
                             onChange={this.props.onChange} 
                             placeholder="Phone Number" 
                     />
-                    <input type="url" 
+                    <StyledInput  
                             name="website" 
                             onChange={this.props.onChange} 
                             placeholder="Website" 
@@ -36,9 +37,23 @@ class Personal extends Component {
                 </form>
 
 
-            </div>
+            </PersonalDiv>
         )
     }
 }
 
 export default Personal;
+
+const PersonalDiv = styled.div`
+display: flex;
+flex-direction: column;
+float: left;
+width: 100%;
+
+`
+const StyledInput = styled.input`
+float: left;
+width: 75%;
+border-radius: 5px;
+margin-bottom: 2px;
+`

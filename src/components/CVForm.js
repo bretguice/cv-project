@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import Input from './Input'
 import Views from './Views'
 import uniqid from 'uniqid'
@@ -10,11 +11,11 @@ class CVForm extends Component {
   
     this.state = {
        
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        website: '',
+        firstName: 'Bret',
+        lastName: 'Guice',
+        email: 'bret.guice@gmail.com',
+        phone: '(318) 243-0575',
+        website: 'github.com/bretguice',
     
        experience: {
          id: uniqid(),
@@ -23,7 +24,7 @@ class CVForm extends Component {
          jobTitle: '',
          startDate: '',
          endDate: '',
-         jobDescription: '',
+         jobDescription: '' 
        },
        education: {
          id: uniqid(),
@@ -39,7 +40,7 @@ class CVForm extends Component {
        },
        jobs: [],
        schools: [],
-       skills: [],
+       skillList: [],
     }
   };
 
@@ -72,6 +73,7 @@ class CVForm extends Component {
           endDate: '',
         }
       })
+      console.log(this.state.jobs);
     }
 
     handleChangeExperience = (e) => {
@@ -113,7 +115,7 @@ class CVForm extends Component {
     handleSubmitSkill = (e) => {
       e.preventDefault();
       this.setState({
-        skills: this.state.skills.concat(this.state.skill),
+        skillList: this.state.skillList.concat(this.state.skill),
         id: uniqid(),
         text: ''
       })
@@ -121,7 +123,8 @@ class CVForm extends Component {
 
   render() {
     return (
-      <div>
+      <CVWrapper>
+        <InputWrapper>
           <Input
             onChangePersonal={this.handleChangePersonal} 
             onChangeEducation={this.handleChangeEducation}
@@ -150,8 +153,11 @@ class CVForm extends Component {
             jobs={this.state.jobs}
             skill={this.state.skill}
             skillName={this.state.skill.text}
-            skillsList={this.state.skills}
+            skillList={this.state.skillList}
           />
+        </InputWrapper>
+
+        <ViewsWrapper>
           <Views 
             firstName={this.state.firstName}
             lastName={this.state.lastName}
@@ -173,11 +179,39 @@ class CVForm extends Component {
             jobs={this.state.jobs}
             skill={this.state.skill}
             skillName={this.state.skill.text}
-            skillsList={this.state.skills}
+            skillList={this.state.skillList}
           />
-      </div>
+        </ViewsWrapper>
+      </CVWrapper>
     )
   }
-}
+};
+
+const CVWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  
+  `;
+
+  const InputWrapper = styled.div`
+    float: left;
+    height: 100vh;
+    width: 55%;
+    overflow: auto;
+    padding: 0 2rem;
+
+  `;
+
+  const ViewsWrapper = styled.div`
+    float: right;
+    height: 100vh;
+    width: 45%;
+    overflow: auto;
+    padding: 0 2rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  `;
+
+
 
 export default CVForm

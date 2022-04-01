@@ -16,6 +16,15 @@ class Views extends Component {
             phone={this.props.phone}
             website={this.props.website}
           />
+          <hr></hr>
+          <EducationView 
+            school={this.props.school}
+            schoolCity={this.props.schoolCity}
+            degree={this.props.degree}
+            schoolStart={this.props.schoolStart}
+            schoolEnd={this.props.schoolEnd}
+            schools={this.props.schools}
+          />
           <WorkExperienceView 
             job={this.props.company}
             jobCity={this.props.jobCity}
@@ -23,17 +32,11 @@ class Views extends Component {
             jobDescription={this.props.jobDescription}
             jobStart={this.props.jobStart}
             jobEnd={this.props.jobEnd}
-          />
-          <EducationView 
-            school={this.props.school}
-            schoolCity={this.props.schoolCity}
-            degree={this.props.degree}
-            schoolStart={this.props.schoolStart}
-            schoolEnd={this.props.schoolEnd}
+            jobs={this.props.jobs}
           />
           <SkillsView 
             skill={this.props.skill}
-            skillsList={this.props.skillsList}
+            skillList={this.props.skillList}
             skillName={this.props.skillName}
           
           />
