@@ -1,23 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-export class Skills extends Component {
-  render() {
-    return (
-      <SkillsDiv>
-        <h3>Skills</h3>
-        <form onSubmit={this.props.onSubmit}>
-          <SkillInput >
-          <StyledInput 
-          value={this.props.skillName}
-          onChange={this.props.onChange}
-          />
-          <AddButton>Add</AddButton>
-          </SkillInput>
-        </form>
-      </SkillsDiv>
-    )
-  }
+const Skills = ({
+  skill,
+  onAdd,
+  onChange
+}) => {
+  return (
+    <SkillsDiv>
+      <h3>Skills</h3>
+      <form onClick={onAdd}>
+        <SkillInput >
+        <StyledInput 
+        value={skill.skillName}
+        onChange={onChange}
+        />
+        <AddButton>Add</AddButton>
+        </SkillInput>
+      </form>
+    </SkillsDiv>
+  )
 }
 
 export default Skills

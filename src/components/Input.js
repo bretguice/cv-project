@@ -1,52 +1,51 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Personal from './Personal'
 import WorkExperience from './WorkExperience'
 import Education from './Education'
 import Skills from './Skills'
 
-class Input extends Component {
+const Input = ({
+  cv,
+  onChangePersonal,
+  onChangeEducation,
+  onChangeExperience,
+  onAddEducation,
+  onAddExperience,
+  onChangeSkill,
+  onAddSkill,
+  onDeleteEducation,
+  onDeleteExperience,
+  onPrint
+}) => {
 
-
-  render(){
   return (
     <div>
         <Personal 
-          onChange={this.props.onChangePersonal}
-          firstname={this.props.firstName}
-          lastName={this.props.lastName}
-          email={this.props.email}
-          phone={this.props.phone}
-          website={this.props.website}
+          onChange={onChangePersonal}
+          personal={cv.personal}
         />
         <Education 
-          onChange={this.props.onChangeEducation}
-          onSubmit={this.props.onSubmitEducation}
-          school={this.props.school}
-          schoolCity={this.props.schoolCity}
-          degree={this.props.degree}
-          schoolStart={this.props.schoolStart}
-          schoolEnd={this.props.schoolEnd}
+          onChange={onChangeEducation}
+          onAdd={onAddEducation}
+          education={cv.education}
+          onDelete={onDeleteEducation}
         />
         <WorkExperience 
-          onChange={this.props.onChangeExperience}
-          onSubmit={this.props.onSubmitExperience}
-          job={this.props.company}
-          jobCity={this.props.jobCity}
-          jobTitle={this.props.jobTitle}
-          jobDescription={this.props.jobDescription}
-          jobStart={this.props.jobStart}
-          jobEnd={this.props.jobEnd}
+          onChange={onChangeExperience}
+          onAdd={onAddExperience}
+          experience={cv.experience}
+          onDelete={onDeleteExperience}
         />
 
         <Skills 
-          onChange={this.props.onChangeSkill}
-          onSubmit={this.props.onSubmitSkill}
-          skillsList={this.props.skillsList}
-          skill={this.props.skill}
-          skillName={this.props.skillName}
+          onChange={onChangeSkill}
+          onAdd={onAddSkill}
+          skillsList={cv.skillsList}
+          skill={cv.skill}
         />
+        <button onClick={onPrint}>Print</button>
     </div>
   )}
-}
+
 
 export default Input

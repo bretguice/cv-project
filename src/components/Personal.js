@@ -1,45 +1,52 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-class Personal extends Component {
+const Personal = ({
+    personal,
+    onChange
+}) => {
 
 
-    render(){
-        return (
-            <PersonalDiv>
-                <h3 >Personal Information</h3>
-                <form >
-                    <StyledInput  
-                            name="firstName" 
-                            onChange={this.props.onChange} 
-                            placeholder="First Name" 
-                    /> 
-                    <StyledInput 
-                            name="lastName" 
-                            onChange={this.props.onChange} 
-                            placeholder="Last Name" 
-                    />
-                    <StyledInput  
-                            name="email" 
-                            onChange={this.props.onChange} 
-                            placeholder="E-mail" 
-                    />
-                    <StyledInput  
-                            name="phone" 
-                            onChange={this.props.onChange} 
-                            placeholder="Phone Number" 
-                    />
-                    <StyledInput  
-                            name="website" 
-                            onChange={this.props.onChange} 
-                            placeholder="Website" 
-                    />
-                </form>
+    return (
+        <PersonalDiv>
+            <h3 >Personal Information</h3>
+            <form >
+                <StyledInput  
+                        name="firstName" 
+                        onChange={onChange} 
+                        placeholder="First Name" 
+                        value={personal.firstName}
+                /> 
+                <StyledInput 
+                        name="lastName" 
+                        onChange={onChange} 
+                        placeholder="Last Name" 
+                        value={personal.lastName}
+                />
+                <StyledInput  
+                        name="email" 
+                        onChange={onChange} 
+                        placeholder="E-mail" 
+                        value={personal.email}
+                />
+                <StyledInput  
+                        name="phone" 
+                        onChange={onChange} 
+                        placeholder="Phone Number" 
+                        value={personal.phone}
+                />
+                <StyledInput  
+                        name="website" 
+                        onChange={onChange} 
+                        placeholder="Website" 
+                        value={personal.website}
+                />
+            </form>
 
 
-            </PersonalDiv>
-        )
-    }
+        </PersonalDiv>
+    )
+
 }
 
 export default Personal;

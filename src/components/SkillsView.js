@@ -1,23 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-export class SkillsView extends Component {
-  render() {
-    return (
-      <SpecialSkills>
-        <HeaderWrapper>
-          <SkillsHeader>Skills</SkillsHeader>
-        </HeaderWrapper>
-        <SkillList>
-        {this.props.skillList.map((skill) => (
-          <div key={skill.id}>
-          <SkillItem >{skill.text}</SkillItem>
-          </div>
-        ))}
-        </SkillList>
-      </SpecialSkills>
-    )
-  }
+const SkillsView = ({
+  skill,
+  skillList
+}) => {
+
+  return (
+    <SpecialSkills>
+      <HeaderWrapper>
+        <SkillsHeader>Skills</SkillsHeader>
+      </HeaderWrapper>
+      <SkillList>
+      {skillList.map((skill) => (
+        <div key={skill.id}>
+        <SkillItem >{skill.text}</SkillItem>
+        </div>
+      ))}
+      </SkillList>
+    </SpecialSkills>
+  )
 }
 
 export default SkillsView

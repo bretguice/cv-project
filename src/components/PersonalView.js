@@ -1,21 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-class PersonalView extends Component {
-
-  
-  render(){
-    return (
-      <PersonalWrapper>
-        <Name>{this.props.firstName} {this.props.lastName}</Name>
-        <ContactWrapper>
-          <PhoneNumber>{this.props.phone}</PhoneNumber>  
-          <Email> {this.props.email}</Email>
-        </ContactWrapper>
-        <Website> {this.props.website} </Website>
-      </PersonalWrapper>
-    )
-  }
+const PersonalView = ({ personal }) => {
+  return (
+    <PersonalWrapper>
+      <Name>{personal.firstName} {personal.lastName}</Name>
+      <ContactWrapper>
+        <PhoneNumber>{personal.phone}</PhoneNumber>  
+        <Email> {personal.email}</Email>
+      </ContactWrapper>
+      <Website> {personal.website} </Website>
+    </PersonalWrapper>
+  )
 }
 
 const PersonalWrapper = styled.div`

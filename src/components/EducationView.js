@@ -1,31 +1,32 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
- class EducationView extends Component {
-  
-  render(){
+ const EducationView = ({ education }) => {
+
+  const schools = education.map((school) => (
+    <SchoolWrapper>          
+      <EducationItem key={school.id}>
+        <SchoolInfo >
+          <School > {school.school} </School>  
+          <SchoolCity > {school.city} </SchoolCity>
+        </SchoolInfo>
+        <DegreeInfo >
+          <Degree >{school.degree}</Degree>
+          <DegreeDates>{school.startDate} to {school.endDate}</DegreeDates>
+        </DegreeInfo> 
+      </EducationItem>       
+    </SchoolWrapper>
+  ));
+
     return (
       <EducationObject> 
         <HeaderWrapper>
           <EducationHeader>Education</EducationHeader>
         </HeaderWrapper>
-        <SchoolWrapper>
-          {this.props.schools.map((school) => (
-          <EducationItem key={school.id}>
-          <SchoolInfo >
-            <School > {school.school} </School>  
-            <SchoolCity > {school.city} </SchoolCity>
-          </SchoolInfo>
-          <DegreeInfo >
-            <Degree >{school.degree}</Degree>
-            <DegreeDates>{school.startDate} to {school.endDate}</DegreeDates>
-          </DegreeInfo> 
-          </EducationItem>
-          ))}
-        </SchoolWrapper>
+        {schools}
       </EducationObject>
     )
-  }
+  
 }
 
 const EducationObject = styled.div`

@@ -1,34 +1,35 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-class WorkExperienceView extends Component {
-  
-  render(){
-    return (
-      <JobObject>
-        <HeaderWrapper>
-          <ExperienceHeader>Experience</ExperienceHeader>
-        </HeaderWrapper>
-        <JobWrapper>
-          {this.props.jobs.map((experience) => (
-          <ExperienceItem key={experience.id}>
-          <JobHeader>
-              <Job>{experience.company}</Job>
-              <JobCity>{experience.city}</JobCity>
-            </JobHeader><JobInfo>
-                <JobDetails>
-                  <JobTitle>{experience.jobTitle}</JobTitle>
-                  <JobDates>{experience.startDate} to {experience.endDate}</JobDates>
-                </JobDetails>
-                <JobDescription>{experience.jobDescription}</JobDescription>
-              </JobInfo> 
-              </ExperienceItem>
-              ))}
-        </JobWrapper>
+const WorkExperienceView = ({ experience }) => {
 
-      </JobObject>
-    )
-  }
+  const jobs = experience.map((job) => (
+    <JobWrapper key={job.id}> 
+      <ExperienceItem>
+        <JobHeader>
+          <Job>{job.company}</Job>
+          <JobCity>{job.city}</JobCity>
+        </JobHeader>
+        <JobInfo>
+          <JobDetails>
+            <JobTitle>{job.jobTitle}</JobTitle>
+            <JobDates>{job.startDate} to {job.endDate}</JobDates>
+          </JobDetails>
+            <JobDescription>{job.jobDescription}</JobDescription>
+        </JobInfo> 
+      </ExperienceItem>
+    </JobWrapper>
+  ))
+  
+  return (
+    <JobObject>
+      <HeaderWrapper>
+        <ExperienceHeader>Experience</ExperienceHeader>
+      </HeaderWrapper>
+      {jobs}
+    </JobObject>
+  )
+  
 }
 
 const JobObject = styled.div`
