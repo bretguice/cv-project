@@ -12,7 +12,6 @@ const Job = ({
         <StyledInput 
         name="company" 
         placeholder="Company"
-        type="text"
         onChange={(e) => onChange(e, id)}
         value={job.company}
         />
@@ -45,12 +44,12 @@ const Job = ({
             />
         </DateDiv>
         <JobDescription 
-            name="jobDescription" 
-            placeholder='Job Description'
-            onChange={(e) => onChange(e, id)}  
-            value={job.JobDescription}
+        name="jobDescription" 
+        placeholder='Job Description'
+        onChange={(e) => onChange(e, id)}  
+        value={job.jobDescription}
         />
-        <DeleteButton onClick={() => onDelete(id)}> Delete </DeleteButton>
+        <DeleteButton onClick={() => onDelete(id)}> Delete Job </DeleteButton>
   </>
   )
 }

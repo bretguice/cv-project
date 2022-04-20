@@ -3,21 +3,21 @@ import styled from 'styled-components'
 
 const SkillsView = ({
   skill,
-  skillList
+  
 }) => {
+  const skillList = skill.map((skillItem) => (
+    <SkillList key={skillItem.id}>
+      <SkillItem >{skillItem.skillName}</SkillItem>
+    </SkillList>
+
+  ))
 
   return (
     <SpecialSkills>
       <HeaderWrapper>
         <SkillsHeader>Skills</SkillsHeader>
       </HeaderWrapper>
-      <SkillList>
-      {skillList.map((skill) => (
-        <div key={skill.id}>
-        <SkillItem >{skill.text}</SkillItem>
-        </div>
-      ))}
-      </SkillList>
+      {skillList}
     </SpecialSkills>
   )
 }

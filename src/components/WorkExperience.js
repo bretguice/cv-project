@@ -6,7 +6,7 @@ const WorkExperience = ({
   experience,
   onAdd,
   onChange,
-  onDelete
+  onDelete, 
 }) => {
 
   const jobs = experience.map((job) => (
@@ -21,12 +21,13 @@ const WorkExperience = ({
 
   return (
     <ExperienceDiv>
-    <h3>Experience</h3>
+      <h3>Experience</h3>
       {jobs}
-      <AddButton onClick={onAdd}> Add </AddButton>
+      <ButtonDiv>
+      <AddButton onClick={onAdd}> Add Experience </AddButton>
+      </ButtonDiv>
     </ExperienceDiv>
   )
-
 }
 
 export default WorkExperience
@@ -41,4 +42,9 @@ const AddButton = styled.button`
 height: 2rem;
 width: 4rem;
 margin-right: 5px;
+`
+
+const ButtonDiv = styled.div`
+align-self: flex-end;
+
 `

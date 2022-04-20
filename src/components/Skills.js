@@ -1,23 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
+import SkillItem from './SkillItem'
 
 const Skills = ({
   skill,
   onAdd,
-  onChange
+  onChange,
+  onDelete
 }) => {
+
+  const skillList = skill.map((skillItem) => (
+    <SkillItem 
+    key={skillItem.id}
+    id={skillItem.id}
+    skill={skillItem}
+    onChange={onChange}
+    onDelete={onDelete}
+    ></SkillItem>
+  )); 
+  
   return (
     <SkillsDiv>
       <h3>Skills</h3>
-      <form onClick={onAdd}>
-        <SkillInput >
-        <StyledInput 
-        value={skill.skillName}
-        onChange={onChange}
-        />
-        <AddButton>Add</AddButton>
-        </SkillInput>
-      </form>
+      {skillList}
+      <ButtonDiv>
+      <AddButton onClick={onAdd}> Add Skill </AddButton>
+      </ButtonDiv>
     </SkillsDiv>
   )
 }
@@ -31,12 +39,7 @@ width: 100%;
 float: left;
 `
 
-const StyledInput = styled.input`
-float: left;
-width: 50%;
-border-radius: 5px;
-margin-bottom: 2px;
-`
+
 const AddButton = styled.button`
 height: 2rem;
 width: 4rem;
@@ -44,9 +47,8 @@ margin-right: 5px;
 
 `
 
-const SkillInput = styled.div`
-display: flex;
-width: 100%;
-flex-direction: column;
-vertical-align: middle;
+
+const ButtonDiv = styled.div`
+align-self: flex-end;
+
 `

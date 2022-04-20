@@ -16,16 +16,12 @@ class Views extends Component {
         <hr></hr>
         <EducationView 
           education={cv.education}
-          schools={cv.schools}
         />
         <WorkExperienceView 
           experience={cv.experience}
-          jobs={cv.jobs}
         />
         <SkillsView 
-          skill={cv.skill}
-          skillList={cv.skillList}
-        
+          skill={cv.skill}        
         />
     </div>
   )

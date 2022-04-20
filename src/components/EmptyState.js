@@ -20,7 +20,7 @@ export const EmptyState = {
      jobDescription: '' 
    },
   ],
-   education:[ 
+   education: [ 
    {
      id: uniqid(),
      school: '',
@@ -30,11 +30,10 @@ export const EmptyState = {
      endDate: '',
    },
   ],
-   skill: {
+   skill: [
+     {
      id: uniqid(),
-     text: '',
+     skillName: '',
    },
-   jobs: [],
-   schools: [],
-   skillList: [],
+  ],
 }

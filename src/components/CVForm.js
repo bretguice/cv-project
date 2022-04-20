@@ -12,7 +12,6 @@ const CVForm = () => {
 
   const handleChangePersonal = (e) => {
     const { name, value } = e.target;
-
     setCv((prevState) => ({
       ...prevState,
       personal: {
@@ -20,110 +19,125 @@ const CVForm = () => {
         [name]: value,
       }
     }))
-  } 
-
-
-    const handleChangeEducation = (e, id) => {
-      const { name, value } = e.target;
-
-      setCv((prevState) => {
-        const newEducation = prevState.education.map((schools) => {
-          if(schools.id === id){
-            return {...schools, [name]: value}
-          }
-          return schools
-        })
-        return {...prevState, education: [...newEducation]}
-      })
-    }
-
-    const handleAddEducation = () => {
-      setCv((prevState) =>({
-        ...prevState,
-        education: [
-          ...prevState.education,
-          {
-            id: uniqid(),
-          school: '',
-          city: '',
-          degree: '',
-          startDate: '',
-          endDate: '',
-          }
-        ]
-      }))
-    }
-
-    const handleDeleteEducation = (id) => {
-      setCv((prevState) => {
-        const newEducation = prevState.education.filter(
-          (school) => school.id !== id
-        )
-        return { ...prevState, education: [...newEducation] }
-      })
-      
-    }
-    const handleDeleteExperience = (id) => {
-      setCv((prevState) => {
-        const newExperience = prevState.experience.filter(
-          (job) => job.id !== id
-        )
-        return { ...prevState, education: [...newExperience] }
-      })
-      
-    }
-
-    const handleChangeExperience = (e, id) => {
-      const { name, value } = e.target;
-      setCv((prevState) => {
-        const newExperience = prevState.experience.map((jobs) => {
-          if(jobs.id === id){
-            return {...jobs, [name]: value}
-          }
-          return jobs
-        })
-        return {...prevState, education: [...newExperience]}
-      })
-    }
-
-    const handleAddExperience = () => {
-      setCv((prevState) => ({
-        ...prevState,
-        experience: [
-          ...prevState.experience,
-          {
-            id: uniqid(),
-          company: '',
-          city: '',
-          jobTitle: '',
-          startDate: '',
-          endDate: '',
-          jobDescription: '', 
-          }
-        ]
-      }))
-    }
-
-    const handleChangeSkill = (e) => {
-      this.setState({
-        skill: {
-          text: e.target.value
+  }
+  const handleChangeEducation = (e, id) => {
+    const { name, value } = e.target;
+    setCv((prevState) => {
+      const newSchool = prevState.education.map((schools) => {
+        if(schools.id === id){
+          return {...schools, [name]: value}
         }
+        return schools
       })
-    }
+      return {...prevState, education: [...newSchool]}
+    })
+  }
 
-    const handleAddSkill = (e) => {
-      e.preventDefault();
-      this.setState({
-        skillList: this.state.skillList.concat(this.state.skill),
+  const handleChangeExperience = (e, id) => {
+    const { name, value } = e.target;
+    setCv((prevState) => {
+      const newJob = prevState.experience.map((jobs) => {
+        if(jobs.id === id){
+          return {...jobs, [name]: value}
+        }
+        return jobs
+      })
+      return {...prevState, experience: [...newJob]}
+    })
+  } 
+  
+  const handleChangeSkill = (e, id) => {
+    const { name, value } = e.target;
+    setCv((prevState) => {
+      const newSkill = prevState.skill.map((skills) => {
+        if(skills.id === id){
+          return {...skills, [name]: value}
+        }
+        return skills
+      })
+      return {...prevState, skill: [...newSkill]}
+    })
+  }
+
+  const handleAddEducation = () => {
+    setCv((prevState) =>({
+      ...prevState,
+      education: [
+        ...prevState.education,
+        {
         id: uniqid(),
-        text: ''
-      })
-    }
+        school: '',
+        city: '',
+        degree: '',
+        startDate: '',
+        endDate: '',
+        },
+      ],
+    }))
+  }
+       
+  const handleAddExperience = () => {
+    setCv((prevState) => ({
+      ...prevState,
+      experience: [
+        ...prevState.experience,
+        {
+        id: uniqid(),
+        company: '',
+        city: '',
+        jobTitle: '',
+        startDate: '',
+        endDate: '',
+        jobDescription: '', 
+        },
+      ],
+    }))
+  }
 
-    const componentRef = useRef();
+  const handleAddSkill = () => {
+    setCv((prevState) => ({
+      ...prevState,
+      skill: [
+        ...prevState.skill,
+        {
+          id: uniqid(),
+          text: '',
+        },
+      ],
+    }))
+  }
 
-    const handlePrint = useReactToPrint({ content: ()=> componentRef.current })
+  const handleDeleteEducation = (id) => {
+    setCv((prevState) => {
+      const newEducation = prevState.education.filter(
+        (school) => school.id !== id
+      )
+      return { ...prevState, education: [...newEducation] }
+    })
+    
+  }
+  const handleDeleteExperience = (id) => {
+    setCv((prevState) => {
+      const newExperience = prevState.experience.filter(
+        (job) => job.id !== id
+      )
+      return { ...prevState, education: [...newExperience] }
+    })
+    
+  }
+
+  const handleDeleteSkill = (id) => {
+    setCv((prevState) => {
+      const newExperience = prevState.skill.filter(
+        (skill) => skill.id !== id
+      )
+      return { ...prevState, skill: [...newExperience] }
+    })
+  }
+
+  const componentRef = useRef();
+
+  const handlePrint = useReactToPrint({ content: ()=> componentRef.current })
 
   return (
     <CVWrapper>
@@ -132,15 +146,15 @@ const CVForm = () => {
           cv={cv}
           onChangePersonal={handleChangePersonal} 
           onChangeEducation={handleChangeEducation}
-          onAddEducation={handleAddEducation}
           onChangeExperience={handleChangeExperience}
-          onAddExperience={handleAddExperience}
           onChangeSkill={handleChangeSkill}
-          onSubmitSkill={handleAddSkill}
-          onPrint={handlePrint}
+          onAddEducation={handleAddEducation}
+          onAddExperience={handleAddExperience}
+          onAddSkill={handleAddSkill}
           onDeleteEducation={handleDeleteEducation}
           onDeleteExperience={handleDeleteExperience}
-          
+          onDeleteSkill={handleDeleteSkill}
+          onPrint={handlePrint}
         />
       </InputWrapper>
 

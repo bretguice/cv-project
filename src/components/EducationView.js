@@ -4,8 +4,8 @@ import styled from 'styled-components'
  const EducationView = ({ education }) => {
 
   const schools = education.map((school) => (
-    <SchoolWrapper>          
-      <EducationItem key={school.id}>
+    <SchoolWrapper key={school.id}>          
+      <EducationItem >
         <SchoolInfo >
           <School > {school.school} </School>  
           <SchoolCity > {school.city} </SchoolCity>

@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import School from './School'
 
 const Education = ({
-education,
-onChange,
-onAdd, 
-onDelete,
-id
+  education,
+  onAdd,
+  onChange,
+  onDelete
 }) => {
+
   const schools = education.map((school) => (
     <School 
     key={school.id}
@@ -21,14 +21,11 @@ id
   
   return (
     <EducationDiv>
-    <h3>Education</h3>
-    
+      <h3>Education</h3>
       {schools}
       <ButtonDiv>
-      <AddButton onClick={onAdd}> Add </AddButton>
+      <AddButton onClick={onAdd}> Add School </AddButton>
       </ButtonDiv>
-
-
     </EducationDiv>
   )
 }

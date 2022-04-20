@@ -44,7 +44,7 @@ const School = ({
             value={school.endDate}
         />
         </DateDiv>
-        <DeleteButton onClick={() => onDelete(id)}> Delete </DeleteButton>
+        <DeleteButton onClick={() => onDelete(id)}> Delete School </DeleteButton>
     </>
   )
 }

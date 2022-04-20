@@ -9,12 +9,13 @@ const Input = ({
   onChangePersonal,
   onChangeEducation,
   onChangeExperience,
+  onChangeSkill,
   onAddEducation,
   onAddExperience,
-  onChangeSkill,
   onAddSkill,
   onDeleteEducation,
   onDeleteExperience,
+  onDeleteSkill,
   onPrint
 }) => {
 
@@ -40,7 +41,7 @@ const Input = ({
         <Skills 
           onChange={onChangeSkill}
           onAdd={onAddSkill}
-          skillsList={cv.skillsList}
+          onDelete={onDeleteSkill}
           skill={cv.skill}
         />
         <button onClick={onPrint}>Print</button>
