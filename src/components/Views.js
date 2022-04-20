@@ -3,13 +3,16 @@ import PersonalView from './PersonalView'
 import WorkExperienceView from './WorkExperienceView'
 import EducationView from './EducationView'
 import SkillsView from './SkillsView'
+import styled from 'styled-components'
 
 class Views extends Component {
   render(){
     const { cv } = this.props;
 
   return (
-    <div>
+    <>
+ 
+    <ResumePage>
         <PersonalView 
           personal={cv.personal}
         />
@@ -23,9 +26,18 @@ class Views extends Component {
         <SkillsView 
           skill={cv.skill}        
         />
-    </div>
+    </ResumePage>
+    </>
   )
   }
 }
 
 export default Views
+
+
+
+const ResumePage = styled.div`
+
+    margin: 2cm;
+   
+`

@@ -79,6 +79,7 @@ border-radius: 5px;
 
 const JobDescription = styled.textarea`
 float: left;
+white-space: pre-line;
 width: 75%;
 border-radius: 5px;
 resize: none;

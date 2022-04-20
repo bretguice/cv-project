@@ -92,6 +92,7 @@ margin: 0;
 const JobDescription = styled.p`
 font-size: 9px;
 text-align: left;
+white-space: pre-line;
 
 `
 const ExperienceItem = styled.div`

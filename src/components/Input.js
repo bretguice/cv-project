@@ -16,7 +16,8 @@ const Input = ({
   onDeleteEducation,
   onDeleteExperience,
   onDeleteSkill,
-  onPrint
+  onPrint,
+  onMyCv
 }) => {
 
   return (
@@ -45,6 +46,7 @@ const Input = ({
           skill={cv.skill}
         />
         <button onClick={onPrint}>Print</button>
+        <button onClick={onMyCv}>Load My CV</button>
     </div>
   )}
 

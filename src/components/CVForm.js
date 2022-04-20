@@ -5,10 +5,17 @@ import Views from './Views'
 import uniqid from 'uniqid'
 import { EmptyState } from './EmptyState'
 import { useReactToPrint } from 'react-to-print'
+import { SampleData } from './SampleData'
 
 const CVForm = () => {
 
   const [cv, setCv] = useState(EmptyState)
+
+  const handleLoadMyCV = () => {
+    setCv(SampleData);
+  }
+  
+
 
   const handleChangePersonal = (e) => {
     const { name, value } = e.target;
@@ -155,6 +162,7 @@ const CVForm = () => {
           onDeleteExperience={handleDeleteExperience}
           onDeleteSkill={handleDeleteSkill}
           onPrint={handlePrint}
+          onMyCv={handleLoadMyCV}
         />
       </InputWrapper>
 
