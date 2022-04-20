@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PersonalView from './PersonalView'
 import WorkExperienceView from './WorkExperienceView'
 import EducationView from './EducationView'
 import SkillsView from './SkillsView'
 
-const Views =({ cv }) => {
+class Views extends Component {
+  render(){
+    const { cv } = this.props;
 
   return (
     <div>
@@ -27,7 +29,7 @@ const Views =({ cv }) => {
         />
     </div>
   )
-
+  }
 }
 
 export default Views
