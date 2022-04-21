@@ -21,7 +21,7 @@ const Job = ({
         onChange={(e) => onChange(e, id)}  
         value={job.jobTitle}
         />
-        <StyledInput 
+        <CityInput 
         name="city"
         placeholder='City'
         onChange={(e) => onChange(e, id)}
@@ -38,7 +38,7 @@ const Job = ({
         <DateDiv>
             <DateInput 
             name="endDate" 
-            placeholder='Start Date (e.g. April 2022 or Present)' 
+            placeholder='End Date (e.g. April 2022 or Present)' 
             onChange={(e) => onChange(e, id)}  
             value={job.endDate}
             />
@@ -62,6 +62,7 @@ float: left;
 width: 75%;
 border-radius: 5px;
 margin-bottom: 2px;
+margin: 0 0.25rem 0.25rem 0.25rem;
 `
 
 const DateDiv = styled.div`
@@ -74,6 +75,7 @@ const DateInput = styled.input`
 float:left;
 width: 50%;
 border-radius: 5px;
+margin: 0 0.25rem 0.25rem 0.25rem;
 `
 
 
@@ -82,14 +84,25 @@ float: left;
 white-space: pre-line;
 width: 75%;
 border-radius: 5px;
-resize: none;
+resize: vertical;
+margin: 0 0.25rem 0.25rem 0.25rem;
 `
 
 
 
 const DeleteButton = styled.button`
-background-color: red;
+background-color: rgb(255,64,64);
 color: white;
-height: 2rem;
-width: 4rem;
+height: 1.4rem;
+width: 7rem;
+border-radius: 5px;
+margin-bottom: 0.25rem;
+cursor: pointer;
+`
+const CityInput = styled.input`
+float: left;
+width: 30%;
+border-radius: 5px;
+margin-bottom: 2px;
+margin: 0 0.25rem 0.25rem 0.25rem;
 `

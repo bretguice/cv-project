@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Job from './Job'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
 const WorkExperience = ({
   experience,
@@ -21,11 +23,11 @@ const WorkExperience = ({
 
   return (
     <ExperienceDiv>
-      <h3>Experience</h3>
+      <HeaderDiv>
+      <ExperienceHeader>Experience</ExperienceHeader>
+      <FontAwesomeIcon icon={faCirclePlus} onClick={onAdd} fontSize='20px'  style={{display: "inline", cursor: "pointer", margin: '0 0 0 1rem', verticalAlign: 'middle'}} />
+      </HeaderDiv>
       {jobs}
-      <ButtonDiv>
-      <AddButton onClick={onAdd}> Add Experience </AddButton>
-      </ButtonDiv>
     </ExperienceDiv>
   )
 }
@@ -38,13 +40,11 @@ flex-direction: column;
 float: left;
 width: 100%;
 `
-const AddButton = styled.button`
-height: 2rem;
-width: 4rem;
-margin-right: 5px;
+
+const HeaderDiv = styled.div`
+display: inline;
 `
-
-const ButtonDiv = styled.div`
-align-self: flex-end;
-
+const ExperienceHeader = styled.h3`
+display: inline;
+vertical-align: middle;
 `

@@ -190,7 +190,7 @@ const CVWrapper = styled.div`
     width: 55%;
     overflow: auto;
     padding: 0 2rem;
-
+  background-color: grey;
   `;
 
   const ViewsWrapper = styled.div`

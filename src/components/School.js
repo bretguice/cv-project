@@ -10,19 +10,19 @@ const School = ({
     
   return (
     <>
-        <StyledInput 
+        <SchoolInput 
         name="school" 
         placeholder="School"
         onChange={(e) => onChange(e, id)}
         value={school.school}
         />
-        <StyledInput 
+        <CityInput 
         name="city"
         placeholder='City'
         onChange={(e) => onChange(e, id)}
         value={school.city}
         />
-        <StyledInput 
+        <SchoolInput 
         name="degree" 
         placeholder='Degree'
         onChange={(e) => onChange(e, id)}
@@ -39,7 +39,7 @@ const School = ({
         <DateDiv>
         <DateInput 
             name="endDate" 
-            placeholder='Start Date (e.g. April 2022)' 
+            placeholder='End Date (e.g. April 2022)' 
             onChange={(e) => onChange(e, id)}
             value={school.endDate}
         />
@@ -51,12 +51,7 @@ const School = ({
 
 export default School;
 
-const StyledInput = styled.input`
-float: left;
-width: 75%;
-border-radius: 5px;
-margin-bottom: 2px;
-`
+
 const DateDiv = styled.div`
 width: 100%;
 float: left;
@@ -66,10 +61,26 @@ const DateInput = styled.input`
 float:left;
 width: 50%;
 border-radius: 5px;
+margin: 0 0.25rem 0.25rem 0.25rem;
 `
 const DeleteButton = styled.button`
-background-color: red;
+background-color: rgb(255,64,64);
 color: white;
-height: 2rem;
-width: 4rem;
+height: 1.4rem;
+width: 7rem;
+border-radius: 5px;
+margin-bottom: 0.25rem;
+cursor: pointer;
+`
+const CityInput = styled.input`
+float: left;
+width: 30%;
+border-radius: 5px;
+margin: 0 0.25rem 0.25rem 0.25rem;
+`
+const SchoolInput = styled.input`
+float: left;
+width: 40%;
+border-radius: 5px;
+margin: 0 0.25rem 0.25rem 0.25rem;
 `

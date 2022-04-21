@@ -11,7 +11,7 @@ const SkillItem = ({
       <>
       <StyledInput 
         name='skillName'
-        placeholder='skill'
+        placeholder='Skill'
         onChange={(e) => onChange(e, id)}
         value={skill.skillName}
         />
@@ -26,13 +26,17 @@ const StyledInput = styled.input`
 float: left;
 width: 50%;
 border-radius: 5px;
-margin-bottom: 2px;
+margin: 0 0.25rem 0.25rem 0.25rem;
 `
     
 
 const DeleteButton = styled.button`
-background-color: red;
+background-color: rgb(255,64,64);
 color: white;
-height: 2rem;
-width: 4rem;
+height: 1.4rem;
+width: 7rem;
+border-radius: 5px;
+margin-bottom: 0.25rem;
+cursor: pointer;
 `
+

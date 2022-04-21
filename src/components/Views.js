@@ -11,8 +11,7 @@ class Views extends Component {
 
   return (
     <>
- 
-    <ResumePage>
+      <ResumePage>   
         <PersonalView 
           personal={cv.personal}
         />
@@ -26,18 +25,15 @@ class Views extends Component {
         <SkillsView 
           skill={cv.skill}        
         />
-    </ResumePage>
+      </ResumePage>
     </>
   )
   }
 }
 
 export default Views
-
-
-
 const ResumePage = styled.div`
+  background-color: white;
+  margin: 2cm;
 
-    margin: 2cm;
-   
 `

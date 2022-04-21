@@ -3,6 +3,7 @@ import Personal from './Personal'
 import WorkExperience from './WorkExperience'
 import Education from './Education'
 import Skills from './Skills'
+import styled from 'styled-components'
 
 const Input = ({
   cv,
@@ -21,7 +22,7 @@ const Input = ({
 }) => {
 
   return (
-    <div>
+    <InputDiv>
         <Personal 
           onChange={onChangePersonal}
           personal={cv.personal}
@@ -45,10 +46,31 @@ const Input = ({
           onDelete={onDeleteSkill}
           skill={cv.skill}
         />
-        <button onClick={onPrint}>Print</button>
-        <button onClick={onMyCv}>Load My CV</button>
-    </div>
+        <PrintButton onClick={onPrint}>Print</PrintButton>
+        <SampleButton onClick={onMyCv}>Load My CV</SampleButton>
+    </InputDiv>
   )}
 
 
 export default Input
+
+const InputDiv = styled.div`
+background-color: aliceblue;
+padding: 1rem;
+box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px ;
+`
+
+const PrintButton = styled.button`
+background-color: lightgreen;
+color: black;
+cursor: pointer;
+width: 6rem
+`
+
+const SampleButton = styled.button`
+background-color: lightcoral;
+color: white;
+width: 6rem;
+margin-left: 0.5rem;
+cursor: pointer;
+`

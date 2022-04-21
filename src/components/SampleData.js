@@ -51,24 +51,16 @@ export const SampleData = {
    skill:[ 
      {
      id: uniqid(),
-     text: "JavaScript",
-   },
-   {
-    id: uniqid(),
-    text: "HTML & CSS",
-  },
-  {
-    id: uniqid(),
-    text: "React JS",
-  },
-  {
-    id: uniqid(),
-    text: "Ticketmaster Archtics and Host",
-  },
-  {
-    id: uniqid(),
-    text: "Self-starting, Problem solving, Ability to work under pressure ",
-  },
+     skillName: "HTML & CSS, Javascript, ReactJS",
+    },
+    {
+      id: uniqid(),
+      skillName: "Ticketmaster Archtics and Host",
+    },
+    {
+      id: uniqid(),
+      skillName: "Self-starting, Problem solving, Ability to work under pressure ",
+    },
 
   ],
 }

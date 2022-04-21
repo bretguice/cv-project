@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import SkillItem from './SkillItem'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
 const Skills = ({
   skill,
@@ -21,11 +23,11 @@ const Skills = ({
   
   return (
     <SkillsDiv>
-      <h3>Skills</h3>
+      <HeaderDiv>
+      <SkillHeader>Skills</SkillHeader>
+      <FontAwesomeIcon icon={faCirclePlus} onClick={onAdd} fontSize='20px'  style={{display: "inline", cursor: "pointer", margin: '0 0 0 1rem', verticalAlign: 'middle'}} />
+      </HeaderDiv>
       {skillList}
-      <ButtonDiv>
-      <AddButton onClick={onAdd}> Add Skill </AddButton>
-      </ButtonDiv>
     </SkillsDiv>
   )
 }
@@ -39,16 +41,10 @@ width: 100%;
 float: left;
 `
 
-
-const AddButton = styled.button`
-height: 2rem;
-width: 4rem;
-margin-right: 5px;
-
+const HeaderDiv = styled.div`
+display: inline;
 `
-
-
-const ButtonDiv = styled.div`
-align-self: flex-end;
-
+const SkillHeader = styled.h3`
+display: inline;
+vertical-align: middle;
 `

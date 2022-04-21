@@ -9,33 +9,33 @@ const Personal = ({
 
     return (
         <PersonalDiv>
-            <h3 >Personal Information</h3>
+            <h3 > Personal </h3>
             <form >
-                <StyledInput  
+                <NameInput  
                         name="firstName" 
                         onChange={onChange} 
                         placeholder="First Name" 
                         value={personal.firstName}
                 /> 
-                <StyledInput 
+                <NameInput 
                         name="lastName" 
                         onChange={onChange} 
                         placeholder="Last Name" 
                         value={personal.lastName}
                 />
-                <StyledInput  
+                <ContactInput  
                         name="email" 
                         onChange={onChange} 
                         placeholder="E-mail" 
                         value={personal.email}
                 />
-                <StyledInput  
+                <ContactInput  
                         name="phone" 
                         onChange={onChange} 
                         placeholder="Phone Number" 
                         value={personal.phone}
                 />
-                <StyledInput  
+                <ContactInput  
                         name="website" 
                         onChange={onChange} 
                         placeholder="Website" 
@@ -56,11 +56,19 @@ display: flex;
 flex-direction: column;
 float: left;
 width: 100%;
-
+background-color: aliceblue;
 `
-const StyledInput = styled.input`
+
+const NameInput = styled.input`
 float: left;
-width: 75%;
+width: 40%;
 border-radius: 5px;
 margin-bottom: 2px;
+margin: 0.25rem;  
+`
+const ContactInput = styled.input`
+float: left;
+width: 40%;
+border-radius: 5px;
+margin: 0 0.25rem 0.25rem 0.25rem;
 `

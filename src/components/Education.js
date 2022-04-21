@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import School from './School'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
 const Education = ({
   education,
@@ -21,11 +23,12 @@ const Education = ({
   
   return (
     <EducationDiv>
-      <h3>Education</h3>
+      <HeaderDiv>
+      <EducationHeader>Education</EducationHeader>
+      <FontAwesomeIcon icon={faCirclePlus} onClick={onAdd} fontSize='20px'  style={{display: "inline", cursor: "pointer", margin: '0 0 0 1rem', verticalAlign: 'middle'}} />
+
+      </HeaderDiv>
       {schools}
-      <ButtonDiv>
-      <AddButton onClick={onAdd}> Add School </AddButton>
-      </ButtonDiv>
     </EducationDiv>
   )
 }
@@ -39,16 +42,10 @@ float: left;
 width: 100%;
 
 `
-
-
-const AddButton = styled.button`
-height: 2rem;
-width: 4rem;
-margin-right: 5px;
-
+const HeaderDiv = styled.div`
+display: inline;
 `
-
-const ButtonDiv = styled.div`
-align-self: flex-end;
-
+const EducationHeader = styled.h3`
+display: inline;
+vertical-align: middle;
 `
