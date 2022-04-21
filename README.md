@@ -1,3 +1,5 @@
+https://bretguice.github.io/cv-project/
+
 CV Generator project from the Odin Project
 
 Initially created components as class components per instructions on the project.
