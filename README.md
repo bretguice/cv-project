@@ -1,40 +1,8 @@
-Create Resume Builder App
-Components:
-  - Personal Info
-  - Education
-  - Work Experience
+CV Generator project from the Odin Project
 
-State will update with each added object
+Initially created components as class components per instructions on the project.
+I came back and converted most components to functional components and utilized useState hook.
+I also added the ability to print or save the resume as a PDF. 
 
-Personal Info
-All created by input fields
-Create Personal Info object
-Each input will be own object that is a prop of Personal Info
-Value of each input is prop
-  - First Name
-  - Last Name
-  - Phone
-  - email
-
-Education 
-create objects with props
-need submit button to create object
-  - school
-  - city
-  - year graduated
-  - degree
-
-Work Epxerience
-create objects with props
-need submit buttont o create object
-  - employer
-  - start date
-  - end date
-  - job title
-  - description
-
-Need a preview componenent for each componenet
-
-Input screen and preview screen
-how can I save as a PDF?
-data storage
+I wanted to experiment using styled components rather than CSS stylesheets.  
+I also wanted to import an icon from Font Awesome to create a cleaner look for adding pieces to the resume.
