@@ -7,7 +7,7 @@ export const SampleData = {
      lastName: 'Guice',
      email: 'bret.guice@gmail.com',
      phone: '(318) 243-0575',
-     website: 'github.com/bretguice',
+     website: 'bretguice.com',
     },
    experience: [
    {
@@ -51,8 +51,16 @@ export const SampleData = {
    skill:[ 
      {
      id: uniqid(),
-     skillName: "HTML & CSS, Javascript, ReactJS",
+     skillName: "HTML & CSS, Javascript, ReactJS, Redux, NextJS",
     },
+    {
+      id: uniqid(),
+      skillName: "nodeJS, express, MongoDB, mongoose",
+     },
+     {
+      id: uniqid(),
+      skillName: "git, github, Jest, npm, webpack, heroku, netlify, vercel",
+     },
     {
       id: uniqid(),
       skillName: "Ticketmaster Archtics and Host",
