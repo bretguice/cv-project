@@ -6,7 +6,7 @@ const App = ()=> {
  
     return (
       <Page className="App">
-        <MainHeader> CV Generator</MainHeader>
+        <MainHeader> Resume Builder</MainHeader>
         <CVForm   />
       </Page>
     );
